@@ -1,0 +1,11 @@
+.footer{
+  background: #2A4365;
+  padding: 4rem;
+  &__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+  }
+}

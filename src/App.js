@@ -1,25 +1,96 @@
-import logo from './logo.svg';
+import React from 'react';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {createTheme, ThemeProvider, Typography} from "@mui/material";
+import {BlogView, CreateView, FileView, LoginView, RegisterView} from './pages/pages';
 import './App.css';
+import JButton from "./components/button/button";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const theme = createTheme({
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    color: "#fff",
+                    borderRadius: '0.5rem',
+
+                    // "&:hover": {
+                    //     background: "#2A4365",
+                    // }
+                },
+            },
+            variants: [
+                {
+                    props: {variant: 'contained'},
+                    style: {
+                        borderRadius: "5px",
+                        width: "109px",
+                        height: "43px",
+                        fontSize: "2rem",
+                        font: "400 2rem / 2.3rem 'Roboto', sans-serif",
+                        backgroundColor: 'black',
+                    },
+                },
+                {
+                    props: {variant: 'outlined'},
+                    style: {
+                        border: `0.2rem solid #F7FAFC`,
+                        color: "#F7FAFC",
+                        padding: "1rem 2.5rem 1rem 2.4rem",
+                        font: "400 2rem / 2.3rem 'Roboto', sans-serif",
+                        textTransform: 'none',
+                        "&:hover": {
+                            border: `0.2rem solid #F7FAFC`,
+                        }
+                    },
+                },
+                {
+                    props: {variant: 'outlined', size: 'medium'},
+                    style: {
+                        border: `0.2rem solid #2A4365`,
+                        color: "#2A4365",
+                        padding: "1.9rem 0 1.9rem 0",
+                        width: "100%",
+                        "&:hover": {
+                            border: `0.2rem solid #2A4365`,
+                        }
+                    },
+                },
+                {
+                    props: {variant: 'outlined', size: 'large'},
+                    style: {
+                        border: `0.3rem solid #F7FAFC`,
+                        padding: "2.9rem 2.5rem 3rem 2.4rem",
+                        font: "400 3rem / 3.5rem 'Roboto', sans-serif",
+                        width: "max-content",
+                        "&:hover": {
+                            border: `0.3rem solid #F7FAFC`,
+                        }
+                    },
+                },
+            ],
+        },
+    },
+    palette: {
+        primary: {
+            main: '#FFFCFE',
+        },
+        typography: {
+            htmlFontSize: 10,
+        }
+    },
+});
+const App = () => (
+    <ThemeProvider theme={theme}>
+        <BrowserRouter>
+            <Routes>
+                <Route exact path="/" element={<BlogView/>}/>
+                <Route path="create" element={<CreateView/>}/>
+                <Route path="fileView" element={<FileView/>}/>
+                <Route path="login" element={<LoginView/>}/>
+                <Route path="register" element={<RegisterView/>}/>
+            </Routes>
+        </BrowserRouter>
+    </ThemeProvider>
+)
 
 export default App;

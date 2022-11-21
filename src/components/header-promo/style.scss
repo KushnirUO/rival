@@ -1,0 +1,36 @@
+.promo{
+  background: #4299E1;
+  height: 100rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-title{
+    font: 100 10rem / 11.7rem 'Roboto',sans-serif;
+    color: #F7FAFC;
+    padding-bottom: 1.4rem;
+    mark{
+      font: 700 10rem / 11.7rem 'Roboto',sans-serif;
+      color: #2D3748;
+      background: none;
+    }
+  }
+  &-subtitle{
+    font: 400 4rem / 4.7rem 'Roboto',sans-serif;
+    color: #FFFCFE;
+  }
+  &-button{
+    width: 26.7rem;
+    height: 9.1rem;
+    padding: 5rem 0 2.3rem;
+  }
+  &-undertext{
+    font: 400 1.5rem / 1.8rem 'Roboto',sans-serif;
+    color: #FFFFFF;
+  }
+}
