@@ -1,6 +1,6 @@
 import * as React from 'react';
 import JButton from "../button/button";
-import Logo from "../logo/logo";
+import Logo from "../header/logo";
 
 import './style.scss'
 export default function footer(){

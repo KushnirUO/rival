@@ -3,7 +3,6 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {createTheme, ThemeProvider, Typography} from "@mui/material";
 import {BlogView, CreateView, FileView, LoginView, RegisterView} from './pages/pages';
 import './App.css';
-import JButton from "./components/button/button";
 
 const theme = createTheme({
     components: {
@@ -74,8 +73,32 @@ const theme = createTheme({
         primary: {
             main: '#FFFCFE',
         },
+        secondary: {
+            main:'#FFFCFE',
+            darkGray:'#2D3748',
+        },
         typography: {
             htmlFontSize: 10,
+            h3: {
+                fontSize: "2rem",
+                lineHeight: "2.3rem",
+            },
+            h4: {
+                fontSize: "1.8rem",
+                lineHeight: "2.1rem",
+            },
+            h5: {
+                fontSize: "1.6rem",
+                lineHeight: "1.9rem",
+            },
+            h6: {
+                fontSize: "1.5rem",
+                lineHeight: "1.8rem",
+            },
+            h7: {
+                fontSize: "1.4rem",
+                lineHeight: "1.6rem",
+            },
         }
     },
 });

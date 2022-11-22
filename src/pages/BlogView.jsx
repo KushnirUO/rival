@@ -1,17 +1,21 @@
 import React from 'react';
-import Footer from "../components/footer/footer";
-import HeaderPromo from "../components/header-promo/header-promo";
-import Header from "../components/header/header";
-import Skeleton from "../components/prototype/block-prototype";
+
+import Header from "../components/header";
+import SideBar from "../components/sideBar";
+import Box from "@mui/material/Box";
+import {makeStyles} from "@mui/styles";
+import BlogInfo from "../components/postInfo";
+import LabelStatus from "../components/postInfo/postItem/labelStatus";
+
+
 
 const BlogView = () => {
     return (
-        <div>
+        <Box>
             <Header/>
-            <HeaderPromo/>
-            <Footer/>
-            <Skeleton/>
-        </div>
+            <SideBar/>
+            <LabelStatus>sdsd</LabelStatus>
+        </Box>
     );
 };
 
