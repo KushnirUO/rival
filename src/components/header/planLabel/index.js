@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import {makeStyles} from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -7,11 +7,10 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: 'space-between',
         alignItems: 'center',
-        borderRadius: "5px",
-        background: "#D53F8C",
-        padding: '0.7rem 1.1rem 0.7rem 1.4rem',
-        font: "700 1.5rem / 1.8rem 'Roboto',sans-serif",
-        color:" #FFFCFE",
+        borderRadius: theme.shape.borderRadius,
+        background: theme.palette.info.main,
+        padding:  theme.spacing(0.7,1.1,0.7,1.4),
+        color:theme.palette.secondary.main,
     },
 }))
 
@@ -19,7 +18,7 @@ const PlanLabel = (variant) => {
     const classes = useStyles();
     return (
         <Box className={classes.pro}>
-            Pro plan
+            <Typography variant='h6'>Pro plan</Typography>
         </Box>
     );
 };

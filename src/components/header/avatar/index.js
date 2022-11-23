@@ -5,8 +5,8 @@ import Avatar from '@mui/material/Avatar';
 import Image from '../../../assets/image/avatar.svg'
 
 const styleAvatar = {
-    height: '50px',
-    width: "50px"
+    height: '5rem',
+    width: "5rem"
 };
 
 const ImageAvatar = () => {

@@ -10,10 +10,11 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         textAlign: 'center',
         gap: "1.3rem",
-        color: "#2C5282",
+        color: theme.palette.secondary.darkBlue2,
         "&:hover": {
             font: "700 1.8rem / 2.1rem 'Roboto',sans-serif",
         },
+        textDecoration: 'none',
     }
 }))
 const LinkItem = (props) => {

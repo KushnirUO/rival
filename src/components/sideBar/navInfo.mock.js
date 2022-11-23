@@ -1,5 +1,5 @@
 import {HomeIcon} from "../../assets/iconJs";
-export const Manage = [{
+export const NavInfo = [{
     title: 'Manage',
     info: [
         {
@@ -45,9 +45,7 @@ export const Manage = [{
             label: "Archived pages"
         },
     ]
-}];
-
-export const Features = [
+},
     {
         title: 'Pro features',
         info: [
@@ -71,4 +69,5 @@ export const Features = [
             },
         ]
     }
-];
+    ];
+

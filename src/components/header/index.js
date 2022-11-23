@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {makeStyles} from '@mui/styles'
-import {Box} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 
 import Avatar from "./avatar";
 import Logo from "./logo";
@@ -9,8 +9,12 @@ import PlanLabel from "./planLabel";
 const useStyles = makeStyles((theme) => ({
     header: {
         background: theme.palette.secondary.darkGray,
-        padding: "1.5rem 3.8rem 1.5rem 7.2rem",
+        padding: theme.spacing(1.5,3.8,1.5,7.2),
+        // [theme.breakpoints.up('xl')]: {
+        //     padding: theme.spacing(2),
+        // },
     },
+    // "1.5rem 3.8rem 1.5rem 7.2rem"
     headerWrapper: {
         display: "flex",
         justifyContent: 'space-between',
@@ -21,10 +25,9 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         gap: '3rem',
     }
-
 }))
 
-export default function Header() {
+export default function Header({ theme }) {
     const classes = useStyles();
     return (
         <header className={classes.header}>
