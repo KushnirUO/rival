@@ -1,4 +1,16 @@
-import {HomeIcon} from "../../assets/iconJs";
+import {
+    BookOpen,
+    BoxSquare,
+    Coffee,
+    FilePlus,
+    HomeIcon,
+    ImageIcon,
+    PenTool,
+    Trash,
+    UsersIcon,
+    Zap
+} from "../../assets/iconJs";
+
 export const NavInfo = [{
     title: 'Manage',
     info: [
@@ -10,37 +22,37 @@ export const NavInfo = [{
         },
         {
             id: 2,
-            icon: <HomeIcon/>,
+            icon: <FilePlus/>,
             link: "/create",
             label: "Create page"
         },
         {
             id: 3,
-            icon: <HomeIcon/>,
+            icon: <PenTool/>,
             link: "/",
             label: "Blog articles"
         },
         {
             id: 4,
-            icon: <HomeIcon/>,
+            icon: <ImageIcon/>,
             link: "/files",
             label: "Files"
         },
         {
             id: 5,
-            icon: <HomeIcon/>,
+            icon: <UsersIcon/>,
             link: "/users",
             label: "Users"
         },
         {
             id: 6,
-            icon: <HomeIcon/>,
+            icon: <Zap/>,
             link: "/subscriptions",
             label: "Subscriptions"
         },
         {
             id: 7,
-            icon: <HomeIcon/>,
+            icon: <Trash/>,
             link: "/archivedPages",
             label: "Archived pages"
         },
@@ -51,23 +63,23 @@ export const NavInfo = [{
         info: [
             {
                 id: 1,
-                icon: <HomeIcon/>,
+                icon: <BookOpen/>,
                 link: "/themes",
                 label: "Themes"
             },
             {
                 id: 2,
-                icon: <HomeIcon/>,
+                icon: <BoxSquare/>,
                 link: "/plugins",
                 label: "Plugins"
             },
             {
                 id: 3,
-                icon: <HomeIcon/>,
+                icon: <Coffee/>,
                 link: "/upgrade",
                 label: "Upgrade plans"
             },
         ]
     }
-    ];
+];
 

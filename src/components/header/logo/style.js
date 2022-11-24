@@ -3,6 +3,7 @@ export const logo = {
     justifyContent: "center",
     alignItems: "center",
     gap: "0.3rem",
+    textDecoration:'none',
 }
 export const logoText = {
     display: "flex",

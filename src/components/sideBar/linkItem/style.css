@@ -1,0 +1,13 @@
+.active {
+    position: relative;
+}
+.active:after{
+    content: '';
+    position: absolute;
+    top: 0.6rem;
+    right: -3.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #D53F8C;
+    border-radius: 10rem;
+}

@@ -3,11 +3,7 @@ import {Box} from '@mui/material';
 
 import Avatar from '@mui/material/Avatar';
 import Image from '../../../assets/image/avatar.svg'
-
-const styleAvatar = {
-    height: '5rem',
-    width: "5rem"
-};
+import {styleAvatar} from './style'
 
 const ImageAvatar = () => {
     return (

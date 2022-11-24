@@ -1,20 +1,8 @@
 import React from 'react';
 import {Box} from "@mui/material";
-import {makeStyles} from "@mui/styles";
 import {Typography} from "@mui/material";
-const useStyles = makeStyles((theme) => ({
-    textWrapper:{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '0.4rem',
-    },
-    titleText:{
-        color:theme.palette.secondary.darkBlue,
-    },
-    subtitleText:{
-        color:theme.palette.secondary.gray,
-    },
-}))
+import {useStyles} from './titleItem.style'
+
 const TitleItem = (props) => {
     const {title, subtitle} = props;
     const classes = useStyles();

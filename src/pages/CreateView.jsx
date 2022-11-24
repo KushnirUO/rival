@@ -1,10 +1,20 @@
 import React from 'react';
+import Header from "../components/header";
+import Box from "@mui/material/Box";
+import SideBar from "../components/sideBar";
+import PostInfo from "../components/postInfo";
 
 const CreateView = () => {
     return (
-        <div>
-            CreateView
-        </div>
+        <Box>
+            <Header/>
+            <Box sx={{
+                display: "flex",
+            }}>
+                <SideBar/>
+                <PostInfo/>
+            </Box>
+        </Box>
     );
 };
 
