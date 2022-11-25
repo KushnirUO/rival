@@ -12,7 +12,7 @@ export const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
     },
     draft: {
-        border: "2px solid #FC8181",
+        border: "0.2rem solid #FC8181",
         borderRadius: theme.shape.borderRadius * 10,
         color: theme.palette.info.red,
         width: '12rem',
@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
     },
     scheduled: {
-        border: "2px solid #F6AD55",
+        border: "0.2rem solid #F6AD55",
         borderRadius: theme.shape.borderRadius * 10,
         color: theme.palette.info.yellow,
         width: '12rem',

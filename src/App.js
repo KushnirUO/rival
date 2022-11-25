@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {createTheme, ThemeProvider, Typography} from "@mui/material";
+import {ThemeProvider,} from "@mui/material";
 import {BlogView, CreateView, FileView, LoginView, RegisterView} from './pages/pages';
 import './App.css';
 import {theme} from './theme/index'

@@ -7,6 +7,8 @@ export const theme = createTheme({
     palette: palette,
     typography: typography,
     components: components,
-    spacing: 10,
-
+    spacing:(factor) => `${1 * factor}rem`,
+    '@media (min-width:1440px)': {
+        spacing: 5,
+    },
 });

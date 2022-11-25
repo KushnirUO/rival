@@ -22,6 +22,7 @@ export const typography = {
     subtitle1: {
         fontSize: "1.4rem",
         lineHeight: "1.6rem",
+
     },
 
 }

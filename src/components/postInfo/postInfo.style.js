@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme) => ({
         display:"flex",
         flexDirection:"column",
         padding: theme.spacing(0,3.8,0,4.7),
-
+        width:'100%',
     },
     postItemsWrapper:{
         display:"flex",
