@@ -9,7 +9,7 @@ import {
     Trash,
     UsersIcon,
     Zap
-} from "../../assets/iconJs";
+} from "../../assets/iconJs/";
 
 export const NavInfo = [{
     title: 'Manage',

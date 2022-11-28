@@ -6,8 +6,10 @@ import {useStyles} from './statsItem.style'
 
 const StatsItem = (props) => {
     const classes = useStyles();
-    let icon;
-    if(props.count > 0)icon = <ArrowUp/>;
+    let icon='';
+    if(props.count > 0){
+        icon = <ArrowUp/>;
+    }
     return (
         <Box className={classes.statsWrapper}>
             <Typography className={classes.countText} variant='h3' sx={{fontWeight:700}}>{props.count}</Typography>

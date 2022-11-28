@@ -5,12 +5,26 @@ import {useStyles} from './labelStatus.style'
 
 const LabelStatus = (variant) => {
     const classes = useStyles();
-    let clasName = classes.scheduled;
-    let labell = 'Scheduled';
-    if (variant.variant === 'published'){clasName = classes.published;labell = 'Published';}
-    if (variant.variant === 'draft'){clasName = classes.draft;labell = 'Draft';}
+    let clasName = '';
+    switch (variant.variant) {
+        case 'Published':
+            clasName = classes.published;
+            break;
+        case 'Draft':
+            clasName = classes.draft;
+            break;
+        case 'Scheduled':
+            clasName = classes.scheduled;
+            break;
+        default:
+            clasName = classes.draft;
+    }
     return (
-        <Box className={clasName}><Typography variant='h5'>{labell}</Typography></Box>
+        <Box className={[classes.statusItem, clasName]}>
+            <Typography variant='h5'>
+                {variant.variant}
+            </Typography>
+        </Box>
     );
 };
 

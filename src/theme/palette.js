@@ -5,6 +5,7 @@ export const palette = {
     },
     secondary: {
         main: '#FFFCFE',
+        white: '#FFFFFF',
         lightGray:'#F7FAFC',
         lightGray1:'#E2E8F0',
         lightGray2:'#EDF2F7',

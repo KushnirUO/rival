@@ -49,7 +49,7 @@ export const components = {
                 },
             },
             {
-                props: {variant: 'outlined'},
+                props: {variant: 'outlined', size: 'small'},
                 style: {
                     border: `0.2rem solid #F7FAFC`,
                     color: "#F7FAFC",

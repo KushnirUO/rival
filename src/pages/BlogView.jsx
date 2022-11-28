@@ -9,9 +9,7 @@ const BlogView = () => {
     return (
         <Box>
             <Header/>
-            <Box sx={{
-                display: "flex",
-            }}>
+            <Box sx={{display: "flex"}}>
                 <SideBar/>
                 <PostInfo/>
             </Box>
