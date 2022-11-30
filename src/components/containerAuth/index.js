@@ -21,7 +21,7 @@ const ContainerAuth = ({variant}) => {
 
     return (
         <Box className={classes.authWrapper}>
-            <FormAuth/>
+            <FormAuth variant={variant}/>
         </Box>
     );
 };

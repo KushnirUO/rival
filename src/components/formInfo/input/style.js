@@ -4,6 +4,7 @@ export const useStyles = makeStyles((theme) => ({
     inputLabelWrapper: {
         display: "flex",
         gap: '1rem',
-        alignItems:'center'
+        alignItems:'center',
+        paddingBottom:'2rem'
     },
 }))

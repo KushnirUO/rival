@@ -6,7 +6,7 @@ import ContainerAuth from "../components/containerAuth";
 const LoginView = () => {
     return (
         <Box>
-            <ContainerAuth/>
+            <ContainerAuth variant='login'/>
         </Box>
     );
 };

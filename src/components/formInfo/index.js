@@ -4,7 +4,7 @@ import {Typography} from "@mui/material";
 import {useStyles} from './style'
 import Login from "../login/login";
 
-const FormAuth = (variant) => {
+const FormAuth = ({variant}) => {
     const classes = useStyles();
     // let generateInput = [<]
     // switch (variant) {
@@ -20,7 +20,7 @@ const FormAuth = (variant) => {
 
     return (
         <Box className={classes.formWrapper}>
-            <Login/>
+            <Login variant={variant}/>
         </Box>
     );
 };

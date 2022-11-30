@@ -3,7 +3,7 @@ import {Box, Typography} from "@mui/material";
 import {useStyles} from './style'
 import {Mail, User, Lock} from "../../../assets/iconJs";
 
-const InputLabel = ({label, htmlFor}) => {
+const InputLabel = ({label}) => {
     const classes = useStyles();
     let icon = '';
     switch (label) {
