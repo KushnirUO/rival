@@ -7,8 +7,11 @@ export const inputClass = {
     background: "#EDF2F7",
     borderRadius: '0.5rem',
     border: 'none',
-    height: '6.8rem',
+    height: '4.8rem',
     width: '100%',
+    padding: '1rem',
+    color:"#2A4365",
+    fontSize: '1.6rem',
 };
 
 export const buttonSubmit = {
@@ -23,4 +26,8 @@ export const buttonSubmit = {
     color: "#FFFFFF",
     maxWidth:'20.1rem',
     padding: '1.8rem 0 2rem',
+    "&:disabled":{
+        cursor:'none',
+
+    }
 };

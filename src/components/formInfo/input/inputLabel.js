@@ -2,8 +2,9 @@ import React from 'react';
 import {Box, Typography} from "@mui/material";
 import {useStyles} from './style'
 import {Mail, User, Lock} from "../../../assets/iconJs";
+import {InputLabel} from "@mui/material";
 
-const InputLabel = ({label, htmlFor}) => {
+const InputLabelCustom = ({label}) => {
     const classes = useStyles();
     let icon = '';
     switch (label) {
@@ -20,11 +21,11 @@ const InputLabel = ({label, htmlFor}) => {
             icon = <Mail/>;
     }
     return (
-        <Box className={classes.inputLabelWrapper}>
+        <InputLabel className={classes.inputLabelWrapper} disableAnimation={true} size="normal" variant='outlined'>
             {icon}
             <Typography variant='h3' sx={{color:'#2A4365'}}>{label}</Typography>
-        </Box>
+        </InputLabel>
     );
 };
 
-export default InputLabel;
+export default InputLabelCustom;
