@@ -2,11 +2,12 @@ import * as React from 'react';
 import {Formik} from "formik";
 import {validationsForm} from "./validatorForm";
 import Box from "@mui/material/Box";
-import {BoxGroup, inputClass,buttonSubmit} from './style'
+import {inputClass,buttonSubmit, buttonReg, buttonForgot} from './style'
 import InputLabelCustom from "../formInfo/input/inputLabel";
-import {FormControl, Input, FormHelperText, InputLabel, FormGroup} from "@mui/material";
+import {FormControl, Input, FormHelperText, InputLabel, FormGroup, Link} from "@mui/material";
+import {NavLink} from "react-router-dom";
 
-export default function login({variant}) {
+export default function login() {
     const handleCheck = ({email, password}) => {
         const userInfo = JSON.parse(get_cookie('user'));
 
@@ -35,7 +36,6 @@ export default function login({variant}) {
             regAcc = 'none'
             break;
         default:
-
     }
 
     return (
@@ -84,19 +84,22 @@ export default function login({variant}) {
                             <Box style={{color: '#950740'}}>{touched.email && errors.email &&
                                 <p className={'error'}>{errors.email}</p>}
                             </Box>
-                        </Box>
-                        <Box style={BoxGroup}>
-                            <InputLabel label='Password'/>
-                            <InputCustom style={inputClass}
+                        </FormGroup>
+                        <FormGroup>
+                            <InputLabelCustom htmlFor="my-input2" label='Password'></InputLabelCustom>
+                            <Input id="my-input2"
+                                   aria-describedby="my-helper-text"
                                    type={`password`}
                                    name={`password`}
+                                   value={values.password}
                                    onChange={handleChange}
                                    onBlur={handleBlur}
-                                   value={values.password}
+                                   error={touched.password && errors.password}
                             />
                             <Box style={{color: '#950740'}}>{touched.password && errors.password &&
-                                <p className={'error'}>{errors.password}</p>}</Box>
-                        </Box>
+                                <p className={'error'}>{errors.password}</p>}
+                            </Box>
+                        </FormGroup>
                         <Box
                             style={buttonSubmit}
                             disabled={!isValid}
@@ -133,8 +136,8 @@ export default function login({variant}) {
                         <Box style={{display: `${regAcc}`}}>
                             <NavLink style={buttonReg} to='/register'>Don’t have & account?</NavLink>
                         </Box>
-                    </Box>
-                )}
+                    </FormControl>
+                )};
             </Formik>
         </Box>
     );

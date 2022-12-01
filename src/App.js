@@ -15,7 +15,6 @@ const App = () => (
                 <Route path="login" element={<LoginView/>}/>
                 <Route path="register" element={<RegisterView/>}/>
                 <Route path="/:pageName" element={<PageNotFound/>}/>
-
             </Routes>
         </BrowserRouter>
     </ThemeProvider>
