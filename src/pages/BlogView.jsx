@@ -8,7 +8,7 @@ import PostInfo from "../components/postInfo";
 const BlogView = () => {
     return (
         <Box>
-            <Header/>
+            <Header variant='authorized'/>
             <Box sx={{display: "flex"}}>
                 <SideBar/>
                 <PostInfo/>
