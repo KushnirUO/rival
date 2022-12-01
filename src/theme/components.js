@@ -1,4 +1,65 @@
 export const components = {
+    MuiFormControl:{
+        styleOverrides: {
+            root: {
+                width:'100%',
+
+            }
+        }
+    },
+    MuiFormHelperText:{
+        styleOverrides: {
+            root: {
+                color:'red',
+                fontSize:'1rem',
+                lineHeight:'100%',
+
+            }
+        }
+    },
+    MuiFormGroup:{
+        styleOverrides: {
+            root: {
+               minHeight:'12.3rem',
+
+            }
+        }
+    },
+    MuiFormfffgControl:{
+        styleOverrides: {
+            root: {
+                width:'100%',
+
+            }
+        }
+    },
+    MuiInputBase:{
+        styleOverrides: {
+            root: {
+                background: "#EDF2F7",
+                borderRadius: '0.5rem',
+                border: 'none',
+                height: '7rem',
+                width: '100%',
+                padding: '1rem',
+                color:"#2A4365",
+                fontSize: '1.6rem',
+
+            }
+        }
+    },
+    MuiInputLabel:{
+        styleOverrides: {
+            root: {
+                transform:'none',
+                display: "flex",
+                gap: '1rem',
+                alignItems:'center',
+                position:'relative',
+
+            }
+        }
+    },
     MuiPagination: {
         styleOverrides: {
             ul: {
