@@ -27,10 +27,8 @@ export const buttonSubmit = {
     color: "#FFFFFF",
     maxWidth:'20.1rem',
     padding: '1.8rem 0 2rem',
-    "&:disabled":{
-        cursor:'none',
-    },
-    width: '100%'
+    width: '100%',
+    cursor:'pointer',
 };
 export const buttonReg = {
     display: 'flex',

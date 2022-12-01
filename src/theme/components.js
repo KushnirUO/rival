@@ -20,7 +20,8 @@ export const components = {
     MuiFormGroup:{
         styleOverrides: {
             root: {
-               minHeight:'14.3rem',
+               minHeight:'12rem',
+                paddingBottom:'2rem',
 
             }
         }

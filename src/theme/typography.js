@@ -2,6 +2,10 @@ export const typography = {
     fontSize: 14,
     htmlFontSize: 16,
     fontFamily:'Roboto',
+    h2: {
+        fontSize: "3rem",
+        lineHeight: "3.5rem",
+    },
     h3: {
         fontSize: "2rem",
         lineHeight: "2.3rem",

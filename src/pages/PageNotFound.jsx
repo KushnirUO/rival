@@ -1,10 +1,11 @@
 import React from 'react';
+import Box from "@mui/material/Box";
 
 const PageNotFound = () => {
     return (
-        <div>
+        <Box>
             Page Not Found
-        </div>
+        </Box>
     );
 };
 
