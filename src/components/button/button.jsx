@@ -14,11 +14,11 @@ export default function JButton(props){
     //
 
 
-    const {variant, label, size, disable, onClick, fullWidth} = props;
+    const {variant, label, size, disable, onClick, fullWidth,to} = props;
     // const classes = `button_${variant}`;
     return (
         <div>
-            <Button variant={variant} size={size} disabled={disable} onClick={onClick} fullWidth={fullWidth}>{label}</Button>
+            <Button variant={variant} size={size} disabled={disable} onClick={onClick} fullWidth={fullWidth} to={to}>{label}</Button>
         </div>
     );
 };

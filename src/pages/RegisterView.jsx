@@ -1,12 +1,13 @@
 import React from 'react';
-import Login from '../components/login/login'
-import FormAuth from "../components/formInfo";
-import Box from "@mui/material/Box";
 import ContainerAuth from "../components/containerAuth";
+import {Box} from "@mui/material";
+import Header from "../components/header";
+
 const RegisterView = () => {
     return (
         <Box>
-            <ContainerAuth variant='register'/>
+            <Header variant='none-authorized'/>
+            <ContainerAuth/>
         </Box>
     );
 };
