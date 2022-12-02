@@ -1,21 +1,31 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {BlogView, CreateView, FileView, LoginView, RegisterView, PageNotFound} from '../pages/pages';
+import {PageNotFound} from '../pages/pages';
 import {PrivateRoute} from './privateRoute'
-
+import {PublicRoute} from './publicRoute'
+import {privateRoute, publicRoute} from "./routes.mock";
 const Routs = () => (
     <BrowserRouter>
         <Routes>
-            <Route exact path="/" element={
-                <PrivateRoute>
-                    <BlogView/>
-                </PrivateRoute>
-            }/>
-            <Route path="create" element={<CreateView/>}/>
-            <Route path="fileView" element={<FileView/>}/>
-            <Route path="login" element={<LoginView/>}/>
-            <Route path="register" element={<RegisterView/>}/>
-            <Route path="/:pageName" element={<PageNotFound/>}/>
+            {privateRoute.map(v => {
+                return (
+                    <Route exact path={v.path} element={
+                        <PrivateRoute>
+                            {v.page}
+                        </PrivateRoute>
+                    }/>
+                );
+            })}
+            {publicRoute.map(v => {
+                return (
+                    <Route exact path={v.path} element={
+                        <PublicRoute>
+                            {v.page}
+                        </PublicRoute>
+                    }/>
+                );
+            })}
+            <Route path="*" element={<PageNotFound/>}/>
         </Routes>
     </BrowserRouter>
 )

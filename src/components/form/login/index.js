@@ -1,60 +1,54 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { useFormik } from 'formik';
-import * as yup from 'yup';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import {validationsForm} from "../../login/validatorForm";
-import {handleCheck} from "./handleCheck";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import InputLabelCustom from "../../formInfo/input/inputLabel";
+import {BoxGroup, inputClass, buttonSubmit, buttonReg, buttonForgot} from '../style'
+import {Link} from "@mui/material";
+import {NavLink} from "react-router-dom";
 
-export const Loginn = () => {
-
-    const formik = useFormik({
-        initialValues: {
-            name: '',
-            password: '',
-            email: '',
-        },
-        validationSchema: validationsForm,
-        onSubmit: (values,{resetForm}) => {
-            if (window.location.pathname === '/register') {
-                document.cookie = 'user=' + JSON.stringify(values);
-                document.cookie = 'auth=false';
-                window.location = '/login';
-            } else handleCheck({values});
-            resetForm('')
-        },
-    });
-
+const LoginForm = ({formik}) => {
     return (
-        <div>
-            <form onSubmit={formik.handleSubmit}>
-                <TextField
-                    fullWidth
-                    id="email"
-                    name="email"
-                    label="Email"
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    error={formik.touched.email && Boolean(formik.errors.email)}
-                    helperText={formik.touched.email && formik.errors.email}
-                />
-                <TextField
-                    fullWidth
-                    id="password"
-                    name="password"
-                    label="Password"
-                    type="password"
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                    error={formik.touched.password && Boolean(formik.errors.password)}
-                    helperText={formik.touched.password && formik.errors.password}
-                />
-                <Button color="primary" variant="contained" fullWidth type="submit">
-                    Submit
+        <Box>
+            <TextField
+                fullWidth
+                style={inputClass}
+                id="email"
+                name="email"
+                label={<InputLabelCustom label='Email address'/>}
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                error={formik.touched.email && Boolean(formik.errors.email)}
+                helperText={formik.touched.email && formik.errors.email}
+            />
+            <TextField
+                fullWidth
+                id="password"
+                name="password"
+                style={inputClass}
+                label={<InputLabelCustom label='Password'/>}
+                type="password"
+                value={formik.values.password}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                error={formik.touched.password && Boolean(formik.errors.password)}
+                helperText={formik.touched.password && formik.errors.password}
+            />
+            <Box style={{display: 'flex', justifyContent: 'space-between', alignItems:'center'}}>
+                <Box>
+                    <Link style={buttonForgot} href='#'>Forgot password?</Link>
+                </Box>
+                <Button variant='contained' sx={{buttonSubmit}} fullWidth type="submit">
+                    Login
                 </Button>
-            </form>
-        </div>
+            </Box>
+                <Box style={{paddingTop:'2rem'}}>
+                    <NavLink style={buttonReg} to='/register'>Don’t have & account?</NavLink>
+                </Box>
+        </Box>
+
     );
 };
 
+export default LoginForm;

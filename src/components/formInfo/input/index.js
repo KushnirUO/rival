@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Typography} from "@mui/material";
 import {useStyles} from './style'
 import {Mail, User, Lock} from "../../../assets/iconJs";
-import {inputClass} from "../../login/style";
+import {inputClass} from "../../form/style";
 
 const InputCustom = (props) => {
     const classes = useStyles();

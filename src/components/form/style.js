@@ -4,18 +4,20 @@ export const BoxGroup = {
     gap: '2rem',
 };
 export const inputClass = {
-    background: "#EDF2F7",
+    display:'flex',
+    gap:'1rem',
     borderRadius: '0.5rem',
     border: 'none',
-    height: '6.8rem',
     width: '100%',
-    padding: '1rem',
     color:"#2A4365",
     fontSize: '1.6rem',
-    marginBottom:'2rem',
+    paddingBottom:'2rem',
+    "&input":{
+        background: "#EDF2F7",
+    },
 };
 
-export const buttonSubmit = {
+export const buttonSubmit  = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

@@ -94,12 +94,12 @@ export const components = {
             {
                 props: {variant: 'contained'},
                 style: {
+                    textTransform: 'inherit',
+                    maxWidth:'20.1rem',
                     borderRadius: "5px",
-                    width: "109px",
-                    height: "43px",
                     fontSize: "2rem",
                     font: "400 2rem / 2.3rem 'Roboto', sans-serif",
-                    backgroundColor: 'black',
+                    padding: '1.8rem 0 2rem',
                 },
             },
             {
