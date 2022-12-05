@@ -6,23 +6,30 @@ import LoginForm from '../form/login/index'
 import RegisterForm from '../form/register/index'
 
 export const Formik = () => {
+    let url = window.location.pathname;
+    let valid = '';
+    switch (url) {
+        case '/login':
+            valid = false;
+            break;
+        case '/register':
+            valid = true;
+            break;
+        default:
+    }
     const formik = useFormik({
         initialValues: {
             name: '',
             password: '',
             email: '',
+            validForm: valid
         },
         validationSchema: validationsForm,
         onSubmit: (values, {resetForm}) => {
-            if (window.location.pathname === '/register') {
-                document.cookie = 'user=' + JSON.stringify(values);
-                document.cookie = 'auth=false';
-                window.location = '/login';
-            } else handleCheck(values);
+            handleCheck(values);
             resetForm('')
         },
     });
-    let url = window.location.pathname;
     let form='';
     switch (url) {
         case '/login':

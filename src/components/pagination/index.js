@@ -24,11 +24,21 @@ const PaginationBlock = () => {
             <Box className={classes.postItemsWrapper}>
                 {_DATA.currentData().map(v => {
                     return (
-                        <PostItem title={v.title} subtitle={v.subtitle} status={v.status} stats={v.stats}/>
+                        <PostItem
+                            title={v.title}
+                            subtitle={v.subtitle}
+                            status={v.status}
+                            stats={v.stats}/>
                     );
                 })}
             </Box>
-            <Pagination color="primary" onChange={handleChange} count={count} page={page} hidePrevButton hideNextButton/>
+            <Pagination color="primary"
+                        onChange={handleChange}
+                        count={count}
+                        page={page}
+                        hidePrevButton
+                        hideNextButton
+            />
         </Box>
     );
 };

@@ -6,35 +6,29 @@ import InputLabelCustom from "../../formInfo/input/inputLabel";
 import {BoxGroup, inputClass, buttonSubmit, buttonReg, buttonForgot} from '../style'
 import {Link} from "@mui/material";
 import {NavLink} from "react-router-dom";
-
+import {loginMock} from '../valid.mock'
+import ErrorText from '../errorText'
 const LoginForm = ({formik}) => {
     return (
         <Box>
-            <TextField
-                fullWidth
-                style={inputClass}
-                id="email"
-                name="email"
-                label={<InputLabelCustom label='Email address'/>}
-                value={formik.values.email}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={formik.touched.email && Boolean(formik.errors.email)}
-                helperText={formik.touched.email && formik.errors.email}
-            />
-            <TextField
-                fullWidth
-                id="password"
-                name="password"
-                style={inputClass}
-                label={<InputLabelCustom label='Password'/>}
-                type="password"
-                value={formik.values.password}
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-                error={formik.touched.password && Boolean(formik.errors.password)}
-                helperText={formik.touched.password && formik.errors.password}
-            />
+            {loginMock.map((item) => {
+                return(
+                    <Box>
+                        <TextField
+                            fullWidth
+                            style={inputClass}
+                            id={item.id}
+                            name={item.name}
+                            label={<InputLabelCustom label={item.label}/>}
+                            value={formik.values[item.id]}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched[item.id] && Boolean(formik.errors[item.id])}
+                        />
+                        <ErrorText formik={formik} item={item.id}/>
+                    </Box>
+                    )
+            })}
             <Box style={{display: 'flex', justifyContent: 'space-between', alignItems:'center'}}>
                 <Box>
                     <Link style={buttonForgot} href='#'>Forgot password?</Link>

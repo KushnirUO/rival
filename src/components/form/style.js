@@ -11,7 +11,7 @@ export const inputClass = {
     width: '100%',
     color:"#2A4365",
     fontSize: '1.6rem',
-    paddingBottom:'2rem',
+    paddingBottom:'1rem',
     "&input":{
         background: "#EDF2F7",
     },

@@ -12,8 +12,17 @@ const StatsItem = (props) => {
     }
     return (
         <Box className={classes.statsWrapper}>
-            <Typography className={classes.countText} variant='h3' sx={{fontWeight:700}}>{props.count}</Typography>
-            <Typography className={classes.viewsText} variant='subtitle1'>Views</Typography>
+            <Typography
+                className={classes.countText}
+                variant='h3'
+                sx={{fontWeight:700}}>
+                {props.count}
+            </Typography>
+            <Typography
+                className={classes.viewsText}
+                variant='subtitle1'>
+                Views
+            </Typography>
             <Box>{icon}</Box>
         </Box>
     );

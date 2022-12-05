@@ -7,18 +7,18 @@ import { useButton } from './useButton';
 
 
 export default function JButton(props){
-    // const propss = theme => ({
-    //     backgroundColor: theme.palette.secondary.main,
-    // });
-    // const classes = useButton(propss);
-    //
-
-
     const {variant, label, size, disable, onClick, fullWidth,to} = props;
-    // const classes = `button_${variant}`;
     return (
         <div>
-            <Button variant={variant} size={size} disabled={disable} onClick={onClick} fullWidth={fullWidth} to={to}>{label}</Button>
+            <Button
+                variant={variant}
+                size={size}
+                disabled={disable}
+                onClick={onClick}
+                fullWidth={fullWidth}
+                to={to}>
+                {label}
+            </Button>
         </div>
     );
 };

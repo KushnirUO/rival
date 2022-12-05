@@ -17,7 +17,11 @@ const SideBar = () => {
                     </Box>
                     {block.info.map(item => (
                         <Box className={classes.itemsWrapper}>
-                            <LinkItem key={item.id} icon={item.icon} link={item.link} label={item.label}/>
+                            <LinkItem
+                                key={item.id}
+                                icon={item.icon}
+                                link={item.link}
+                                label={item.label}/>
                         </Box>
                     ))}
                 </Box>

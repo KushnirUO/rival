@@ -21,9 +21,17 @@ const InputLabelCustom = ({label}) => {
             icon = <Mail/>;
     }
     return (
-        <InputLabel className={classes.inputLabelWrapper} disableAnimation={true} size="normal" variant='outlined'>
+        <InputLabel
+            className={classes.inputLabelWrapper}
+            disableAnimation={true}
+            size="normal"
+            variant='outlined'>
             {icon}
-            <Typography variant='h3' sx={{color:'#2A4365'}}>{label}</Typography>
+            <Typography
+                variant='h3'
+                sx={{color:'#2A4365'}}>
+                {label}
+            </Typography>
         </InputLabel>
     );
 };
