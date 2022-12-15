@@ -7,7 +7,7 @@ import PostInfo from "../components/postInfo";
 const CreateView = () => {
     return (
         <Box>
-            <Header/>
+            <Header variant='authorized'/>
             <Box sx={{
                 display: "flex",
             }}>

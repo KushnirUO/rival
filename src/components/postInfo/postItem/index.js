@@ -11,7 +11,7 @@ const PostItem = (props) => {
     const classes = useStyles();
     return (
         <Box className={classes.postWrapper}>
-            <Box className={classes.itemWrapper}>
+            <Box className={classes.itemWrapper} >
                 <TitleItem title={title} subtitle={subtitle}/>
                 <LabelStatus variant={status}/>
                 <Box className={classes.statsPadd}><StatsItem count={stats}/></Box>

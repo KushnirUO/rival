@@ -10,15 +10,15 @@ const SideBar = () => {
 
     return (
         <Box className={classes.sideBar}>
-            {NavInfo.map(block => (
-                <Box className={classes.sideBarWrapper}>
+            {NavInfo.map((block,key) => (
+                <Box className={classes.sideBarWrapper} key={key}>
                     <Box className={classes.titleText}>
                         <Typography variant="h4">{block.title}</Typography>
                     </Box>
-                    {block.info.map(item => (
-                        <Box className={classes.itemsWrapper}>
+                    {block.info.map((item,key) => (
+                        <Box className={classes.itemsWrapper} key={key}>
                             <LinkItem
-                                key={item.id}
+                                id={item.id}
                                 icon={item.icon}
                                 link={item.link}
                                 label={item.label}/>

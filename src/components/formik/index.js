@@ -1,6 +1,6 @@
 import React from 'react';
 import {useFormik} from 'formik';
-import {validationsForm} from "./validatorForm";
+import {ValidationShema} from "./ValidationShema";
 import {handleCheck} from "./handleCheck";
 import LoginForm from '../form/login/index'
 import RegisterForm from '../form/register/index'
@@ -24,7 +24,7 @@ export const Formik = () => {
             email: '',
             validForm: valid
         },
-        validationSchema: validationsForm,
+        validationSchema: ValidationShema,
         onSubmit: (values, {resetForm}) => {
             handleCheck(values);
             resetForm('')

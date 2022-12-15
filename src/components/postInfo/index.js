@@ -2,7 +2,7 @@ import React from 'react';
 import {Box} from "@mui/material";
 import BlogHeader from "../blockHeader/blogHeader";
 import BlockLine from "../blockLine";
-import PaginationBlock from "../pagination";
+import {PaginationBlock} from "../pagination";
 import {useStyles} from './postInfo.style'
 
 const PostInfo = () => {

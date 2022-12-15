@@ -11,9 +11,9 @@ import ErrorText from '../errorText'
 const LoginForm = ({formik}) => {
     return (
         <Box>
-            {loginMock.map((item) => {
+            {loginMock.map((item,key) => {
                 return(
-                    <Box>
+                    <Box key={key}>
                         <TextField
                             fullWidth
                             style={inputClass}

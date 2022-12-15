@@ -4,11 +4,11 @@ import './style.css'
 import {useStyles} from './style'
 
 const LinkItem = (props) => {
-    const {icon, link, label} = props;
+    const {icon, link, label, id} = props;
     const classes = useStyles();
 
     return (
-        <NavLink className={classes.navStyle} to={link}>
+        <NavLink className={classes.navStyle} to={link} id={id}>
             {icon}
             {label}
         </NavLink>

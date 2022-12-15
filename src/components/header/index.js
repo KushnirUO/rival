@@ -13,7 +13,12 @@ export default function Header({variant}) {
     let variantRight = '';
     switch (variant) {
         case 'none-authorized':
-            variantRight = <NavLink to='/login' style={{height:'4.7rem',textDecoration:'none'}}><JButton variant='outlined' size='small' label='Sign in'/>;</NavLink>
+            variantRight =
+                <NavLink to='/login' style={{height: '4.7rem', textDecoration: 'none'}}>
+                    <JButton variant='outlined'
+                             size='small'
+                             label='Sign in'/>;
+                </NavLink>
             break;
         case 'authorized':
             variantRight = [<PlanLabel variant='pro'/>, <Avatar/>];

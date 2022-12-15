@@ -1,5 +1,4 @@
 import {get_cookie} from "../../cookies/getCookie";
-
 export const handleCheck =(values) => {
     if (window.location.pathname === '/register') {
         document.cookie = 'user=' + JSON.stringify(values);
@@ -9,8 +8,9 @@ export const handleCheck =(values) => {
     {
         const userInfo = JSON.parse(get_cookie('user'));
         if (userInfo.email === values.email && userInfo.password === values.password) {
-            window.location = '/';
+            window.location = '/blog';
             document.cookie = 'auth=true';
+            console.log(true)
         }
     }
 }

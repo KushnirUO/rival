@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const validationsForm = yup.object().shape({
+export const ValidationShema = yup.object().shape({
 
             name: yup.string().typeError('').min(2, 'So short').max(20, 'So long'),
 

@@ -21,7 +21,7 @@ export const privateRoute = [
     },
     {
         page: <BlogView/>,
-        path: '/'
+        path: 'blog'
     },
 ];
 

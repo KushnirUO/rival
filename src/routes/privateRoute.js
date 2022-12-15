@@ -2,7 +2,7 @@ import {Navigate} from 'react-router-dom';
 import {get_cookie} from "../cookies/getCookie";
 
 export function PrivateRoute({ children }) {
-    // document.cookie='auth=false'
+
     const isLoggedIn = get_cookie('auth')
     return (
         <>

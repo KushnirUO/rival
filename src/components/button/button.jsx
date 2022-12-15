@@ -25,7 +25,7 @@ export default function JButton(props){
 JButton.defaultProps = {
     label: "Button",
     variant: "contained",
-    size: "medium",
+
     fullWidth: 0,
     disabled: 0,
     onClick: ()=>{},
