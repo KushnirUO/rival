@@ -12,7 +12,7 @@ export const logoText = {
 }
 export const logoImg = {
     width: "3rem",
-    height: "2rem",
+    height: "3rem",
 }
 export const logoMark = {
     color: "#63B3ED",
