@@ -5,6 +5,7 @@ export const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         gap: '0.4rem',
+        width: '32rem',
     },
     titleText:{
         color:theme.palette.secondary.darkBlue,

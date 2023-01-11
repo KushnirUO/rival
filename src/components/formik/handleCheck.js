@@ -1,4 +1,4 @@
-import {get_cookie} from "../../cookies/getCookie";
+import {get_cookie} from "../../utils/getCookie";
 export const handleCheck =(values) => {
     if (window.location.pathname === '/register') {
         document.cookie = 'user=' + JSON.stringify(values);

@@ -1,5 +1,5 @@
 import {Navigate} from 'react-router-dom';
-import {get_cookie} from "../cookies/getCookie";
+import {get_cookie} from "../utils/getCookie";
 
 export function PrivateRoute({ children }) {
 

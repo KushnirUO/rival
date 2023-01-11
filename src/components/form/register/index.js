@@ -23,6 +23,7 @@ const RegisterForm = ({formik}) => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             error={formik.touched[item.id] && Boolean(formik.errors[item.id])}
+                            type={item.type}
                         />
                         <ErrorText formik={formik} item={item.id}/>
                     </Box>

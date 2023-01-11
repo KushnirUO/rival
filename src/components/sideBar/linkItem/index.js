@@ -8,7 +8,10 @@ const LinkItem = (props) => {
     const classes = useStyles();
 
     return (
-        <NavLink className={classes.navStyle} to={link} id={id}>
+        <NavLink
+            className={classes.navStyle}
+            to={link}
+            id={id}>
             {icon}
             {label}
         </NavLink>

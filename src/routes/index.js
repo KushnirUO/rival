@@ -6,25 +6,32 @@ import {PublicRoute} from './publicRoute'
 import {privateRoute, publicRoute} from "./routes.mock";
 import {PaginationBlock, QueryParamsDemo} from "../components/pagination";
 import BlogView from "../pages/BlogView";
+
 const Routs = () => (
     <BrowserRouter>
         <Routes>
-            {privateRoute.map(v => {
+            {privateRoute.map(page => {
                 return (
-                    <Route exact path={v.path} key={v.path} element={
-                        <PrivateRoute>
-                            {v.page}
-                        </PrivateRoute>
-                    }/>
+                    <Route exact
+                           path={page.path}
+                           key={page.path}
+                           element={
+                               <PrivateRoute>
+                                   {page.page}
+                               </PrivateRoute>
+                           }/>
                 );
             })}
-            {publicRoute.map((v,key) => {
+            {publicRoute.map((page, key) => {
                 return (
-                    <Route exact path={v.path} key={key} element={
-                        <PublicRoute>
-                            {v.page}
-                        </PublicRoute>
-                    }/>
+                    <Route exact
+                           path={page.path}
+                           key={key}
+                           element={
+                               <PublicRoute>
+                                   {page.page}
+                               </PublicRoute>
+                           }/>
                 );
             })}
             <Route exact path='*' element={

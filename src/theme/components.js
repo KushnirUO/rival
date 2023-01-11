@@ -1,4 +1,11 @@
 export const components = {
+    MuiMenuItem:{
+        styleOverrides: {
+            root: {
+                fontSize:'2rem',
+            }
+        }
+    },
     MuiFormControl:{
         styleOverrides: {
             root: {
