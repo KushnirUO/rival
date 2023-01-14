@@ -5,29 +5,22 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import {InputLabel, MenuItem, Select, Typography} from "@mui/material";
 import {modalClassWrapper, inputModalClass,buttonModal} from "./style";
-import Button from "@mui/material/Button";
 
-export const ModalCreateCard = ({active,setActive}) => {
+export const ModalCreateCard = ({active,setOpen}) => {
     const dispatch = useDispatch();
 
     const [inputOne, setInputOne] = useState('');
-    const [inputTwo, setInputTwo] = useState('');
     const [inputThree, setInputThree] = useState('');
-    const [inputFour, setInputFour] = useState('');
 
     const handleAction = () => {
             dispatch(addCard({
                 title: inputOne,
-                subtitle: inputTwo,
                 status: inputThree,
-                stats: inputFour
             }));
-            setActive(false);
+        setOpen(false);
         setInputOne('');
-        setInputTwo('');
         setInputThree('');
-        setInputFour('');
-        };
+    };
 
     return (
         <Box style={modalClassWrapper}>
@@ -44,16 +37,6 @@ export const ModalCreateCard = ({active,setActive}) => {
                     onChange={(event) => setInputOne(event.target.value)}
                     required
                 />
-                <Typography variant='h4' sx={{fontWeight:700, paddingBottom:'1rem'}}>Subtitle</Typography>
-                <TextField
-                    fullWidth
-                    style={inputModalClass}
-                    name={'subtitle'}
-                    type={`text`}
-                    value={inputTwo}
-                    onChange={(event) => setInputTwo(event.target.value)}
-                    required
-                />
                 <Typography variant='h4' sx={{fontWeight:700, paddingBottom:'1rem'}}>Status</Typography>
                 <Select
                     labelId="demo-simple-select-label"
@@ -66,16 +49,8 @@ export const ModalCreateCard = ({active,setActive}) => {
                     <MenuItem value={'Scheduled'}>Scheduled</MenuItem>
                     <MenuItem value={'Draft'}>Draft</MenuItem>
                 </Select>
+                <Box sx={{ paddingBottom:'1rem'}}></Box>
 
-                <Typography variant='h4' sx={{fontWeight:700, paddingBottom:'1rem'}}>Stats</Typography>
-                <TextField
-                    fullWidth
-                    style={inputModalClass}
-                    name={'stats'}
-                    type={`text`}
-                    value={inputFour}
-                    onChange={(event) => setInputFour(event.target.value)}
-                />
             </form>
             <button
                 style={buttonModal}

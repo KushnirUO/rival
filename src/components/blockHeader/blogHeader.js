@@ -9,7 +9,7 @@ import {ModalCreateCard} from "../modalCreateCard/modalCreateCard";
 
 const BlogHeader = () => {
     const classes = useStyles();
-    const [modalActive, setModalActive] = useState();
+    const [open, setOpen] = React.useState(false);
     return (
         <Box className={classes.blockWrapper}>
             <Box className={classes.blogWrapper}>
@@ -23,18 +23,9 @@ const BlogHeader = () => {
                     <TextHeading label='Stats'/>
                 </Box>
             </Box>
-            <Box onClick={() => setModalActive(true)}>
-                {blogBtn.map(item => (
-                    <IconButton
-                        icon={item.icon}
-                        label={item.label}
-                        key={item.key}
-                    />
-                ))}
-            </Box>
 
-            <Modal active={modalActive} setActive={setModalActive}>
-                <ModalCreateCard active={modalActive} setActive={setModalActive}/>
+            <Modal open={open} setOpen={setOpen}>
+                <ModalCreateCard open={open} setOpen={setOpen}/>
             </Modal>
         </Box>);
 };

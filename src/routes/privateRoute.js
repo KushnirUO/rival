@@ -1,12 +1,12 @@
 import {Navigate} from 'react-router-dom';
 import {get_cookie} from "../utils/getCookie";
+import store from "../store/store";
 
 export function PrivateRoute({ children }) {
-
-    const isLoggedIn = get_cookie('auth')
+    const isLoggedIn = store.getState().users.auth;
     return (
         <>
-            {isLoggedIn === "true"
+            {isLoggedIn === true
                 ? children
                 : <Navigate to="/login"/>
             }

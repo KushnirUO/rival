@@ -10,14 +10,14 @@ const postCardSlice = createSlice({
             state.cards.push({
                 id: new Date().toISOString(),
                 title: action.payload.title,
-                subtitle: action.payload.subtitle,
+                subtitle: '5 days ago',
                 status: action.payload.status,
-                stats: action.payload.stats
+                stats: Math.ceil(Math.random()*500),
             });
         },
         removeCard: (state, action) => {
             state.cards = state.cards.filter(card => card.id !== action.payload.id)
-        }
+        },
     }
 })
 

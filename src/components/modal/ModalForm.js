@@ -1,6 +1,7 @@
 import React from "react"
 import "./style.css"
 import {Modal, Button, Box, Typography} from "@mui/material";
+import IconButton from "../buttonIcon";
 
 const style = {
     position: 'absolute',
@@ -13,8 +14,22 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
-export default function Modals({children}) {
-    const [open, setOpen] = React.useState(false);
+const btn__style = {
+    color: '#FFFCFE',
+    display: 'flex',
+    padding: '0.7rem 1.1rem 0.7rem 1.4rem',
+    background: '#2D3748',
+    alignItems: 'center',
+    borderRadius: '4px',
+    justifyContent: 'space-between',
+    textDecoration: 'none',
+    fontSize: '1.5rem',
+    lineHeight: '150%',
+    fontWeight: '700',
+};
+export default function Modals({children, open, setOpen}) {
+    // console.log(modalBool)
+    // const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     return (
@@ -24,7 +39,9 @@ export default function Modals({children}) {
         //     </div>
         // </div>
         <Box>
-            <Button onClick={handleOpen}>Open modal</Button>
+            <Button onClick={handleOpen} sx={btn__style}>
+                Add post
+            </Button>
             <Modal
                 open={open}
                 onClose={handleClose}

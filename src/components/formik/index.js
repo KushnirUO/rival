@@ -1,11 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {useFormik} from 'formik';
 import {ValidationShema} from "./ValidationShema";
 import {handleCheck} from "./handleCheck";
 import LoginForm from '../form/login/index'
 import RegisterForm from '../form/register/index'
+import {useDispatch, useSelector} from "react-redux";
+import {addUser, authUser, userSelector} from "../../store/authUserSlice";
+import store from "../../store/store";
+
+
 
 export const Formik = () => {
+    const dispatch = useDispatch();
+    const handleActionReg = (values) => {
+        dispatch(addUser({
+            name: values.name,
+            email: values.email,
+            password: values.password,
+        }));
+    }
+    const handleActionLogin = (values) => {
+        dispatch(authUser({
+            id: values.email,
+            password: values.password,
+        }));
+    }
+
     let url = window.location.pathname;
     let valid = '';
     switch (url) {
@@ -26,6 +46,13 @@ export const Formik = () => {
         },
         validationSchema: ValidationShema,
         onSubmit: (values, {resetForm}) => {
+            if (window.location.pathname === '/register') {
+                handleActionReg(values);
+            }
+            else {
+                console.log(123)
+                handleActionLogin(values);
+            }
             handleCheck(values);
             resetForm('')
         },
