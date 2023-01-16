@@ -7,10 +7,18 @@ import PlanLabel from "./planLabel";
 import {useStyles} from './style'
 import JButton from "../button/button";
 import {NavLink} from "react-router-dom";
+import {logOutUser} from "../../store/authUserSlice";
+import {useDispatch} from "react-redux";
 
 export default function Header({variant}) {
     const classes = useStyles();
+    const dispatch = useDispatch();
     let variantRight = '';
+
+    function handleLogout(){
+        dispatch(logOutUser());
+        window.location = '/login';
+    }
     switch (variant) {
         case 'none-authorized':
             variantRight =
@@ -21,7 +29,11 @@ export default function Header({variant}) {
                 </NavLink>
             break;
         case 'authorized':
-            variantRight = [<PlanLabel variant='pro'/>, <Avatar/>];
+            variantRight = [
+                <PlanLabel variant='pro'/>,
+                <Avatar/>,
+                <JButton variant='outlined' size='small' label='Logout' onClick={handleLogout} />
+            ];
             break;
         default:
             variantRight = <JButton variant='outlined' size='small' label='Sign in'/>;

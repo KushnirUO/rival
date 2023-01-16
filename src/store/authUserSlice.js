@@ -5,6 +5,7 @@ const addUserSlice = createSlice({
     initialState: {
         users: [],
         auth: false,
+        authDataUser: {},
     },
     reducers: {
         addUser(state, action) {
@@ -17,30 +18,23 @@ const addUserSlice = createSlice({
             });
 
         },
-        // gdfv45$%
         authUser(state, action) {
             state.users.map(user => {
                 if(user.id === action.payload.id && user.password===action.payload.password){
                     state.auth=true;
-                    console.log('authorized')
-                    return true
+                    state.authDataUser=user;
                 }
             })
-
-            // state.users.map(user => {
-            //     if(user.id === action.payload.id){
-            //         state.auth = true;
-            //         // state.users.auth = true;
-            //         console.log(state.auth)
-            //     }
-            // })
-            // state.users = state.users.find(user => user.id === action.payload.id)
+        },
+        logOutUser(state) {
+            state.auth=false;
+            state.authDataUser={};
         },
     }
 
 })
 
 
-export const {addUser, authUser} = addUserSlice.actions
+export const {addUser, authUser, logOutUser} = addUserSlice.actions
 export default addUserSlice.reducer
 // export const userSelector = (state) => state.auth=true;
