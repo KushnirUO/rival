@@ -9,7 +9,6 @@ const addUserSlice = createSlice({
     },
     reducers: {
         addUser(state, action) {
-            console.log(action)
             state.users.push({
                 id: action.payload.email,
                 name: action.payload.name,

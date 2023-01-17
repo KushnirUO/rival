@@ -18,8 +18,18 @@ const postCardSlice = createSlice({
         removeCard: (state, action) => {
             state.cards = state.cards.filter(card => card.id !== action.payload.id)
         },
+        editCard(state, action) {
+
+            state.cards.map(card => {
+                if(card.id === action.payload.id){
+                    card.title=action.payload.title;
+                    card.status=action.payload.status;
+                }
+            })
+        },
+
     }
 })
 
-export const {addCard, removeCard} = postCardSlice.actions
+export const {addCard, removeCard, editCard} = postCardSlice.actions
 export default postCardSlice.reducer

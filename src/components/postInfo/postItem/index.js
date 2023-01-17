@@ -20,7 +20,6 @@ const PostItem = (props) => {
                 <LabelStatus variant={status}/>
                 <Box className={classes.statsPadd}><StatsItem count={stats}/></Box>
             </Box>
-
             <CustomizedMenus id={id}/>
         </Box>
     );

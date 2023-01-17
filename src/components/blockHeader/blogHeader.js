@@ -24,8 +24,8 @@ const BlogHeader = () => {
                 </Box>
             </Box>
 
-            <Modal open={open} setOpen={setOpen}>
-                <ModalCreateCard open={open} setOpen={setOpen}/>
+            <Modal open={open} setOpen={setOpen} title={'Add post'}>
+                <ModalCreateCard setOpen={setOpen}/>
             </Modal>
         </Box>);
 };

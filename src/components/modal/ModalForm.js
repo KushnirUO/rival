@@ -2,6 +2,13 @@ import React from "react"
 import "./style.css"
 import {Modal, Button, Box, Typography} from "@mui/material";
 import IconButton from "../buttonIcon";
+import {NavLink} from "react-router-dom";
+import JButton from "../button/button";
+import PlanLabel from "../header/planLabel";
+import Avatar from "../header/avatar";
+import {removeCard} from "../../store/postCardSlice";
+import EditIcon from "@mui/icons-material/Edit";
+import {useDispatch} from "react-redux";
 
 const style = {
     position: 'absolute',
@@ -27,21 +34,22 @@ const btn__style = {
     lineHeight: '150%',
     fontWeight: '700',
 };
-export default function Modals({children, open, setOpen}) {
-    // console.log(modalBool)
-    // const [open, setOpen] = React.useState(false);
+export default function Modals({children, open, setOpen, title, id}) {
+    let variantRight;
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    switch (title) {
+        case 'Add post':
+            variantRight = <Button onClick={handleOpen} sx={btn__style}>Add post</Button>;
+            break;
+        case 'Edit':
+            variantRight = <span onClick={handleOpen} style={{width:'100%'}}><EditIcon/> Edit</span>;
+            break;
+    }
+
     return (
-        // <div className={active ? "modal active1" : "modal"} onClick={()=> setActive(false)}>
-        //     <div className={active ? "modal_content active1" : "modal_content"} onClick={e => e.stopPropagation()}>
-        //         {children}
-        //     </div>
-        // </div>
         <Box>
-            <Button onClick={handleOpen} sx={btn__style}>
-                Add post
-            </Button>
+            {variantRight}
             <Modal
                 open={open}
                 onClose={handleClose}

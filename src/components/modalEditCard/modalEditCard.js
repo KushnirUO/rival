@@ -1,19 +1,30 @@
 import React, {isValidElement, useState} from "react";
 import {useDispatch} from "react-redux";
-import {addCard} from "../../store/postCardSlice";
+import {editCard} from "../../store/postCardSlice";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import {InputLabel, MenuItem, Select, Typography} from "@mui/material";
 import {modalClassWrapper, inputModalClass,buttonModal} from "./style";
+import store from "../../store/store";
 
-export const ModalCreateCard = ({setOpen}) => {
+export const ModalEditCard = ({setOpen, id}) => {
     const dispatch = useDispatch();
-
-    const [inputOne, setInputOne] = useState('');
-    const [inputThree, setInputThree] = useState('');
+    const cardsArr = store.getState().cards.cards;
+    let cardTitle;
+    let cardStatus;
+    const doubled = cardsArr.map(card => {
+        if(card.id === id){
+            cardTitle =  card.title;
+            cardStatus = card.status;
+        }
+    });
+    const [inputOne, setInputOne] = useState(cardTitle);
+    const [inputThree, setInputThree] = useState(cardStatus);
 
     const handleAction = () => {
-            dispatch(addCard({
+        console.log(inputOne,inputThree)
+            dispatch(editCard({
+                id: id,
                 title: inputOne,
                 status: inputThree,
             }));
@@ -24,7 +35,7 @@ export const ModalCreateCard = ({setOpen}) => {
 
     return (
         <Box style={modalClassWrapper}>
-            <h1>Create post</h1>
+            <h1>Edit post</h1>
             <br/>
             <form>
                 <Typography variant='h3' sx={{fontWeight:700, paddingBottom:'1rem'}}>Title</Typography>
@@ -57,7 +68,7 @@ export const ModalCreateCard = ({setOpen}) => {
                 onClick={handleAction}
                 type={`submit`}
             >
-                Create
+                Edit
             </button>
         </Box>
     )
