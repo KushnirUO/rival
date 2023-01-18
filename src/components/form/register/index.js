@@ -29,7 +29,12 @@ const RegisterForm = ({formik}) => {
                     </Box>
             )
             })}
-            <Button variant="contained" sx={{buttonSubmit}} fullWidth type="submit" disabled={!formik.isValid}>
+            <Button
+                variant="contained"
+                sx={{buttonSubmit}}
+                fullWidth
+                type="submit"
+                disabled={!formik.isValid}>
                 Register
             </Button>
         </Box>

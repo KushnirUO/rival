@@ -1,10 +1,7 @@
 import React from 'react';
 import Box from "@mui/material/Box";
 import {useStyles} from './style'
-import {Formik, Loginn} from "../formik";
-import RegisterForm from "../form/register";
-import LoginForm from "../form/login";
-
+import {Formik} from "../formik";
 
 const FormAuth = () => {
     const classes = useStyles();

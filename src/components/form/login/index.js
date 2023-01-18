@@ -3,16 +3,17 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import InputLabelCustom from "../../formInfo/input/inputLabel";
-import {BoxGroup, inputClass, buttonSubmit, buttonReg, buttonForgot} from '../style'
+import {inputClass, buttonSubmit, buttonReg, buttonForgot} from '../style'
 import {Link} from "@mui/material";
 import {NavLink} from "react-router-dom";
 import {loginMock} from '../valid.mock'
 import ErrorText from '../errorText'
+
 const LoginForm = ({formik}) => {
     return (
         <Box>
-            {loginMock.map((item,key) => {
-                return(
+            {loginMock.map((item, key) => {
+                return (
                     <Box key={key}>
                         <TextField
                             fullWidth
@@ -28,19 +29,35 @@ const LoginForm = ({formik}) => {
                         />
                         <ErrorText formik={formik} item={item.id}/>
                     </Box>
-                    )
+                )
             })}
-            <Box style={{display: 'flex', justifyContent: 'space-between', alignItems:'center'}}>
+            <Box style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+            }}>
                 <Box>
-                    <Link style={buttonForgot} href='#'>Forgot password?</Link>
+                    <Link
+                        style={buttonForgot}
+                        href='#'>
+                        Forgot password?
+                    </Link>
                 </Box>
-                <Button variant='contained' sx={{buttonSubmit}} fullWidth type="submit">
+                <Button
+                    variant='contained'
+                    sx={{buttonSubmit}}
+                    fullWidth
+                    type="submit">
                     Login
                 </Button>
             </Box>
-                <Box style={{paddingTop:'2rem'}}>
-                    <NavLink style={buttonReg} to='/register'>Don’t have & account?</NavLink>
-                </Box>
+            <Box style={{paddingTop: '2rem'}}>
+                <NavLink
+                    style={buttonReg}
+                    to='/register'>
+                    Don’t have & account?
+                </NavLink>
+            </Box>
         </Box>
 
     );

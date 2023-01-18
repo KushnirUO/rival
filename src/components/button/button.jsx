@@ -1,10 +1,7 @@
 import * as React from 'react';
 import Button from "@mui/material/Button";
 import PropTypes from 'prop-types';
-
 import './style.scss'
-import { useButton } from './useButton';
-
 
 export default function JButton(props){
     const {variant, label, size, disable, onClick, fullWidth,to} = props;

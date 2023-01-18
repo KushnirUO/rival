@@ -19,7 +19,6 @@ const postCardSlice = createSlice({
             state.cards = state.cards.filter(card => card.id !== action.payload.id)
         },
         editCard(state, action) {
-
             state.cards.map(card => {
                 if(card.id === action.payload.id){
                     card.title=action.payload.title;

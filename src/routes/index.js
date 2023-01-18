@@ -4,8 +4,6 @@ import {PageNotFound} from '../pages/pages';
 import {PrivateRoute} from './privateRoute'
 import {PublicRoute} from './publicRoute'
 import {privateRoute, publicRoute} from "./routes.mock";
-import {PaginationBlock, QueryParamsDemo} from "../components/pagination";
-import BlogView from "../pages/BlogView";
 
 const Routs = () => (
     <BrowserRouter>

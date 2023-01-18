@@ -21,6 +21,3 @@ export const useStyles = makeStyles((theme) => ({
         paddingRight: '14.6rem'
     },
 }))
-export const colorPen = {
-    filter: "brightness(17)",
-}

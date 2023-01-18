@@ -1,10 +1,10 @@
-import React, {isValidElement, useState} from "react";
+import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {editCard} from "../../store/postCardSlice";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import {InputLabel, MenuItem, Select, Typography} from "@mui/material";
-import {modalClassWrapper, inputModalClass,buttonModal} from "./style";
+import {MenuItem, Select, Typography} from "@mui/material";
+import {modalClassWrapper, inputModalClass, buttonModal} from "./style";
 import store from "../../store/store";
 
 export const ModalEditCard = ({setOpen, id}) => {
@@ -13,8 +13,8 @@ export const ModalEditCard = ({setOpen, id}) => {
     let cardTitle;
     let cardStatus;
     const doubled = cardsArr.map(card => {
-        if(card.id === id){
-            cardTitle =  card.title;
+        if (card.id === id) {
+            cardTitle = card.title;
             cardStatus = card.status;
         }
     });
@@ -22,12 +22,12 @@ export const ModalEditCard = ({setOpen, id}) => {
     const [inputThree, setInputThree] = useState(cardStatus);
 
     const handleAction = () => {
-        console.log(inputOne,inputThree)
-            dispatch(editCard({
-                id: id,
-                title: inputOne,
-                status: inputThree,
-            }));
+        console.log(inputOne, inputThree)
+        dispatch(editCard({
+            id: id,
+            title: inputOne,
+            status: inputThree,
+        }));
         setOpen(false);
         setInputOne('');
         setInputThree('');
@@ -38,7 +38,7 @@ export const ModalEditCard = ({setOpen, id}) => {
             <h1>Edit post</h1>
             <br/>
             <form>
-                <Typography variant='h3' sx={{fontWeight:700, paddingBottom:'1rem'}}>Title</Typography>
+                <Typography variant='h3' sx={{fontWeight: 700, paddingBottom: '1rem'}}>Title</Typography>
                 <TextField
                     fullWidth
                     style={inputModalClass}
@@ -48,7 +48,7 @@ export const ModalEditCard = ({setOpen, id}) => {
                     onChange={(event) => setInputOne(event.target.value)}
                     required
                 />
-                <Typography variant='h4' sx={{fontWeight:700, paddingBottom:'1rem'}}>Status</Typography>
+                <Typography variant='h4' sx={{fontWeight: 700, paddingBottom: '1rem'}}>Status</Typography>
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
@@ -60,7 +60,7 @@ export const ModalEditCard = ({setOpen, id}) => {
                     <MenuItem value={'Scheduled'}>Scheduled</MenuItem>
                     <MenuItem value={'Draft'}>Draft</MenuItem>
                 </Select>
-                <Box sx={{ paddingBottom:'1rem'}}></Box>
+                <Box sx={{paddingBottom: '1rem'}}></Box>
 
             </form>
             <button

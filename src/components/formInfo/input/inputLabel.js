@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 import {useStyles} from './style'
 import {Mail, User, Lock} from "../../../assets/iconJs";
 import {InputLabel} from "@mui/material";

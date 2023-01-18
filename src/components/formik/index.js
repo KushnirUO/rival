@@ -1,14 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {useFormik} from 'formik';
 import {ValidationShema} from "./ValidationShema";
 import {handleCheck} from "./handleCheck";
 import LoginForm from '../form/login/index'
 import RegisterForm from '../form/register/index'
-import {useDispatch, useSelector} from "react-redux";
-import {addUser, authUser, userSelector} from "../../store/authUserSlice";
-import store from "../../store/store";
-
-
+import {useDispatch} from "react-redux";
+import {addUser, authUser} from "../../store/authUserSlice";
 
 export const Formik = () => {
     const dispatch = useDispatch();

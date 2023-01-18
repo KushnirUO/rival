@@ -10,7 +10,6 @@ import {useSelector} from "react-redux";
 
 function useQuery() {
     const {search} = useLocation();
-
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 

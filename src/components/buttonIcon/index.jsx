@@ -10,7 +10,11 @@ export default function IconButton(props) {
         <NavLink className={classes.iconButton} >
             <Box>{icon}</Box>
             <Box className={classes.btnText}>
-                <Typography variant='h5' sx={{fontWeight:700}}>{label}</Typography>
+                <Typography
+                    variant='h5'
+                    sx={{fontWeight:700}}>
+                    {label}
+                </Typography>
             </Box>
         </NavLink>
     );
