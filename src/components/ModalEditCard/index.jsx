@@ -35,8 +35,11 @@ export const ModalEditCard = ({setOpen, id}) => {
 
     return (
         <Box style={modalClassWrapper}>
-            <h1>Edit post</h1>
-            <br/>
+            <Typography
+                variant='h1'
+                sx={{paddingBottom: '1rem'}}>
+                Edit post
+            </Typography>
             <form>
                 <Typography variant='h3' sx={{fontWeight: 700, paddingBottom: '1rem'}}>Title</Typography>
                 <TextField
