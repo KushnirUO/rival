@@ -1,7 +1,7 @@
 import React from 'react';
-import ContainerAuth from "../components/containerAuth";
+import ContainerAuth from "../components/ContainerAuth";
 import {Box} from "@mui/material";
-import Header from "../components/header";
+import Header from "../components/Header";
 
 const RegisterView = () => {
     return (

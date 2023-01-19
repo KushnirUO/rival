@@ -19,15 +19,15 @@ const addUserSlice = createSlice({
         },
         authUser(state, action) {
             state.users.map(user => {
-                if(user.id === action.payload.id && user.password===action.payload.password){
-                    state.auth=true;
-                    state.authDataUser=user;
+                if(user.id === action.payload.id && user.password === action.payload.password){
+                    state.auth = true;
+                    state.authDataUser = user;
                 }
             })
         },
         logOutUser(state) {
-            state.auth=false;
-            state.authDataUser={};
+            state.auth = false;
+            state.authDataUser = {};
         },
     }
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Header from "../components/header";
-import SideBar from "../components/sideBar";
+import Header from "../components/Header";
+import SideBar from "../components/SideBar";
 import Box from "@mui/material/Box";
-import PostInfo from "../components/postInfo";
+import PostInfo from "../components/PostInfo";
 
 const BlogView = () => {
     return (

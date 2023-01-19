@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from "@mui/material/Box";
-import ContainerAuth from "../components/containerAuth";
+import ContainerAuth from "../components/ContainerAuth";
 const LoginView = () => {
     return (
         <Box>

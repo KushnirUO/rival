@@ -1,4 +1,4 @@
-import {BlogView, CreateView, FileView, LoginView, RegisterView} from '../pages/pages';
+import {BlogView, CreateView, FileView, LoginView, RegisterView} from '../pages';
 
 export const publicRoute = [
     {
