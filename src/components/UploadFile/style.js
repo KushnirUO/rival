@@ -8,7 +8,6 @@ export const boxUpload = {
     justifyContent: 'center',
     alignItems: 'center',
     padding: '3.6rem',
-    margin: '5rem 4.1rem 2.4rem 4.1rem',
     maxHeight: '15.3rem',
 };
 export const buttonUpload = {

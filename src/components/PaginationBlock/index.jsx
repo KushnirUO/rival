@@ -1,25 +1,26 @@
 import Pagination from '@mui/material/Pagination';
 import React, {useState} from 'react';
-import {Box, PaginationItem} from "@mui/material";
+import {Box, Button, PaginationItem} from "@mui/material";
 import paginations from "./pagination";
 import {postInfo} from "../PostInfo/postInfo.mock";
 import PostItem from "../PostInfo/PostItem";
 import {useStyles} from './style'
 import {Link, NavLink, useLocation} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {FilesCard} from "../FilesCard";
 
 function useQuery() {
     const {search} = useLocation();
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
-export function PaginationBlock() {
+export function PaginationBlock({cards, link}) {
     let query = useQuery();
     let init = Number(query.get("page"));
-    const cards = useSelector(state => state.cards.cards);
     let [page, setPage] = useState(init);
     const PER_PAGE = 5;
-    const linkTo = "/blog?page=";
+    let linkTo = "/blog?page=";
+    let renderItem;
+
     const count = Math.ceil(cards.length / PER_PAGE);
     const _DATA = paginations(cards, PER_PAGE, init);
     const classes = useStyles();
@@ -30,6 +31,40 @@ export function PaginationBlock() {
         _DATA.jump(p);
     };
 
+
+    switch (link) {
+        case 'blog':
+            linkTo = "/blog?page=";
+            renderItem = <Box className={classes.postItemsWrapper}>
+                {_DATA.currentData().map((item, key) => {
+                    return (
+                        <PostItem
+                            id={item.id}
+                            title={item.title}
+                            subtitle={item.subtitle}
+                            status={item.status}
+                            stats={item.stats}
+                            key={key}
+                        />
+                    );
+                })}
+            </Box>
+            break
+        case 'fileView':
+            linkTo = "/fileView?page=";
+            renderItem = <Box className={classes.postItemsWrapper}>
+                {_DATA.currentData().map((item, key) => {
+                    return (
+                        <FilesCard
+                            author={item.author}
+                            download_url={item.download_url}
+                            key={key}
+                        />
+                    );
+                })}
+            </Box>
+            break
+    }
     if (init === 0) init = 1;
     if (_DATA.currentData().length === 0 && cards.length !== 0) {
         window.location = linkTo + (page - 1);
@@ -56,22 +91,8 @@ export function PaginationBlock() {
 
     return (
         <Box>
-            <Box className={classes.postItemsWrapper}>
-                {_DATA.currentData().map((item, key) => {
-                    return (
-                        <PostItem
-                            id={item.id}
-                            title={item.title}
-                            subtitle={item.subtitle}
-                            status={item.status}
-                            stats={item.stats}
-                            key={key}
-                        />
-                    );
-                })}
-            </Box>
+            {renderItem}
             {pagination}
-
         </Box>
     );
 }
