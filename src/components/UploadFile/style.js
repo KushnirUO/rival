@@ -1,7 +1,6 @@
 export const boxUpload = {
     background: "#F7FAFC",
     border:'2px solid #BEE3F8',
-    width: '100%',
     display: 'flex',
     flexDirection: 'column',
     gap: '1.6rem',

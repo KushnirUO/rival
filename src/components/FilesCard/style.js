@@ -9,5 +9,5 @@ export const cardWrapper = {
     display: 'flex',
     gap: '20rem',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
 }

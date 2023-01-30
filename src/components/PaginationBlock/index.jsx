@@ -1,13 +1,12 @@
 import Pagination from '@mui/material/Pagination';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Box, Button, PaginationItem} from "@mui/material";
 import paginations from "./pagination";
-import {postInfo} from "../PostInfo/postInfo.mock";
 import PostItem from "../PostInfo/PostItem";
 import {useStyles} from './style'
 import {Link, NavLink, useLocation} from "react-router-dom";
 import {FilesCard} from "../FilesCard";
-
+import { createBrowserHistory } from 'history';
 function useQuery() {
     const {search} = useLocation();
     return React.useMemo(() => new URLSearchParams(search), [search]);
@@ -15,12 +14,12 @@ function useQuery() {
 
 export function PaginationBlock({cards, link}) {
     let query = useQuery();
+    const history = createBrowserHistory();
     let init = Number(query.get("page"));
     let [page, setPage] = useState(init);
     const PER_PAGE = 5;
     let linkTo = "/blog?page=";
     let renderItem;
-
     const count = Math.ceil(cards.length / PER_PAGE);
     const _DATA = paginations(cards, PER_PAGE, init);
     const classes = useStyles();
@@ -30,7 +29,6 @@ export function PaginationBlock({cards, link}) {
         setPage(p);
         _DATA.jump(p);
     };
-
 
     switch (link) {
         case 'blog':
@@ -58,6 +56,7 @@ export function PaginationBlock({cards, link}) {
                         <FilesCard
                             author={item.author}
                             download_url={item.download_url}
+                            format={item.format}
                             key={key}
                         />
                     );
@@ -65,9 +64,14 @@ export function PaginationBlock({cards, link}) {
             </Box>
             break
     }
+    useEffect(() => {
+        handleChange('',1);
+        history.replace({ pathname: `${linkTo + 1}`})
+    }, [cards])
+
     if (init === 0) init = 1;
     if (_DATA.currentData().length === 0 && cards.length !== 0) {
-        window.location = linkTo + (page - 1);
+        history.replace({ pathname: `${linkTo + (page - 1)}`})
     }
     if (cards.length > 5) pagination =
         <Pagination
