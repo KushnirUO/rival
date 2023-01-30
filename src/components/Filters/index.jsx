@@ -9,7 +9,6 @@ export const Filters = ({onClick}) => {
     let [value,setValue]= useState();
     let filterItem = get_cookie('filter')
     const handleClick = (clas) => {
-        console.log(clas)
         setValue(clas);
         document.cookie = 'filter=' + JSON.stringify(clas);
     }

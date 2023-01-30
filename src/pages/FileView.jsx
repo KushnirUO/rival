@@ -11,7 +11,7 @@ const FileView = () => {
             <Header variant='authorized'/>
             <Box sx={{display: "flex"}}>
                 <SideBar/>
-                <Box sx={{padding: "4rem"}}>
+                <Box sx={{padding: "4rem", width: '100%'}}>
                     <FilesList/>
                 </Box>
             </Box>

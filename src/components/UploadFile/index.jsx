@@ -10,7 +10,7 @@ function UploadFile ({state, setState}){
     const handleFileChange = (e) => {
         let fileValue = e.target.files[0].name;
         let dotIndex = fileValue.indexOf('.');
-        let format = fileValue.substr(dotIndex, 4);
+        let format = fileValue.substr(dotIndex, 5);
         let name = fileValue.substr(0, dotIndex);
 
         if (e.target.files) {

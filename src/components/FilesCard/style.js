@@ -10,4 +10,5 @@ export const cardWrapper = {
     gap: '20rem',
     alignItems: 'center',
     justifyContent: 'space-between',
+    minWidth: '80rem',
 }
