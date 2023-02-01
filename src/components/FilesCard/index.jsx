@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Typography} from "@mui/material";
-import {cardWrapper, cardImage} from "./style";
+import {cardWrapper, cardImage, cardText} from "./style";
 import {Burger} from "../../assets/iconJs";
 
 export const FilesCard = (props) => {
@@ -20,7 +20,7 @@ export const FilesCard = (props) => {
         <Box style={cardWrapper}>
             <Box style={cardWrapper}>
                 {cardImageSrc}
-                <Typography variant='h3'>{author}{format}</Typography>
+                <Typography variant='h3' style={cardText}>{author}{format}</Typography>
                 <Typography variant='h3'>Uploaded 2 days ago</Typography>
             </Box>
             <Burger/>

@@ -12,3 +12,6 @@ export const cardWrapper = {
     justifyContent: 'space-between',
     minWidth: '80rem',
 }
+export const cardText = {
+    width: '25rem',
+}

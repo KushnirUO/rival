@@ -11,6 +11,7 @@ const FilesList = () => {
     const [cardsAdd, setCardsAdd] = useState([]);
     const [filters, setFilters] = useState([]);
     let [search, setSearch] = useState();
+    let [searchFilter, setSearchFilter] = useState();
     let formats = [".pdf", ".jpg", ".mp3", ".mp4"];
 
     useEffect(() => {
@@ -25,6 +26,7 @@ const FilesList = () => {
             return formats[format]
         }
 
+        document.cookie = 'filter=' + JSON.stringify('');
         const array = cards.map((item) =>
             item.format = handleRandom(),
         )
@@ -72,20 +74,38 @@ const FilesList = () => {
     }
 
     useEffect(() => {
-        document.cookie = 'filter=' + JSON.stringify('');
-        setFilters(cardsAdd.filter((item) => (item.author.toLowerCase().includes(search))))
+        setSearchFilter(filters.filter((item) => (item.author.toLowerCase().includes(search))))
+    }, [filters])
+
+    useEffect(() => {
+        if (JSON.parse(get_cookie('filter')) === '') setSearchFilter(cardsAdd.filter((item) => (item.author.toLowerCase().includes(search))))
+        else setSearchFilter(filters.filter((item) => (item.author.toLowerCase().includes(search))))
     }, [search])
+
+    let cardsFilter = filters;
+    if (search !== undefined) cardsFilter = searchFilter;
 
     return (
         <Box>
-            <UploadFile state={cardsAdd} setState={setCardsAdd}/>
-            <Box sx={{display: "flex", justifyContent: 'space-between', padding: '2.2rem 0 1.2rem'}}>
-                <Search value={search} setValue={setSearch}/>
+            <UploadFile
+                state={cardsAdd}
+                setState={setCardsAdd}/>
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: 'space-between',
+                    padding: '2.2rem 0 1.2rem'
+                }}>
+                <Search
+                    value={search}
+                    setValue={setSearch}/>
                 <Filters onClick={() => {
                     handleFilter()
                 }}/>
             </Box>
-            <PaginationBlock cards={filters} link='fileView'/>
+            <PaginationBlock
+                cards={cardsFilter}
+                link='fileView'/>
         </Box>
     );
 }

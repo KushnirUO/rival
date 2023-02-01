@@ -29,13 +29,13 @@ export const NavInfo = [{
         {
             id: 3,
             icon: <PenTool/>,
-            link: "/",
+            link: "/blog",
             label: "Blog articles"
         },
         {
             id: 4,
             icon: <ImageIcon/>,
-            link: "/files",
+            link: "/fileView",
             label: "Files"
         },
         {
